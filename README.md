@@ -8,4 +8,5 @@ Aslına bakılacak olur ise, bu sadece basit bir hesap makinesi oluşturmak içi
 C ile yazdığımız fonksiyonları kullanabilmek için doğru bir şekilde derleyip ortaya bir ".so" dosyası çıkarmamız ve bu dosyayı Python'daki ctypes kütüphanesini kullanarak projemize dahil etmemiz gerekiyor.
 ---
 `gcc -c hesap.c -fPIC`
+
 `gcc -shared hesap.o -o hesap.so`
