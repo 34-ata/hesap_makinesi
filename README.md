@@ -5,7 +5,7 @@
 # Sadece bir hesap makinesi değil
 Aslına bakılacak olur ise, bu sadece basit bir hesap makinesi oluşturmak için başlanılmış bir proje değil. Bu, C ile yazılan fonksiyonları kütüphane mantığı ile Python'da hazırlanmış bir kullanıcı arayüzü programında nasıl kullanılabileceğini ele alıyor.
 # Kütüphaneyi derleme
-C ile yazdığımız fonksiyonları kullanabilmek için doğru bir şekilde derleyip ortaya bir ".so" dosyası çıkarmamız ve bu dosyayı Python'daki ctypes kütüphanesini kullanarak projemize dahil etmemiz gerekiyor.
+C ile yazdığımız fonksiyonları kullanabilmek için doğru bir şekilde derleyip ortaya bir ".so" dosyası çıkarmamız ve bu dosyayı Python'daki `ctypes` kütüphanesini kullanarak projemize dahil etmemiz gerekiyor.
 ---
 `gcc -c hesap.c -fPIC`
 
