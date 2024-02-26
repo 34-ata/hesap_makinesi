@@ -33,6 +33,7 @@ text_input.grid(row=0, column=0, columnspan=4, padx=10, pady=10)
 
 def button_click(char):
     global current
+
     current += str(char)
     if char == '=':
         button_equal()
@@ -49,8 +50,26 @@ def button_clear():
 def button_equal():
     global current
     try:
-        parsed_exp = sympify(current.replace('=', "")) #sympify ile sadece ayırmak ile kalmıyoruz işlemleri de yapıyoruz (gayet kullanışlı).
-        current = str(parsed_exp)
+        operators = ["+", "-", "*", "/"]
+        i = 0
+        while (current[i] not in operators):
+            i += 1
+        if (current[i] == '+'):
+            num1 = float(current.split("+")[0])
+            num2 = float(current.replace('=', "").split("+")[1])
+            current = str(add_func(num1, num2))
+        elif (current[i] == '/'):
+            num1 = float(current.split("/")[0])
+            num2 = float(current.replace('=', "").split("/")[1])
+            current = str(divide_func(num1, num2))
+        elif (current[i] == '-'):
+            num1 = float(current.split("-")[0])
+            num2 = float(current.replace('=', "").split("-")[1])
+            current = str(subtract_func(num1, num2))
+        elif (current[i] == '*'):
+            num1 = float(current.split("*")[0])
+            num2 = float(current.replace('=', "").split("*")[1])
+            current = str(multiply_func(num1, num2))
         text_input.delete(0, tk.END)
         text_input.insert(0, current)
     except:
